@@ -1,9 +1,117 @@
-<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Hello World! Site Title</title>
-  </head>
-  <body>
-    <h1>Hello Alex! hahah</h1>
-  </body>
+
+<head>
+  <title>My First Value</title>
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
+
+</head>
+
+<body>
+
+<div id="connstatus">
+-----</div>
+<div id="chart_div" style="height: 300px; width: 300px;">
+</div>
+</body>
+
+<script>
+google.charts.load('current', {'packages':['gauge']});
+google.charts.setOnLoadCallback(drawChart);
+
+
+var myMsg = 0; // where I put my message
+
+// gauge variables.
+
+
+
+
+
+// Google Charts Stuff
+     function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['My Value', 'Value'],
+          ['Count', 0],
+        ]);
+
+        var options = {
+          min: 0, max: 10,
+          width: 300, height: 300,
+          redFrom: 9.5, redTo: 10,
+          yellowFrom:9.0, yellowTo: 9.5,
+          minorTicks: 2,
+          majorTicks: ["0","1","2","3","4","5","6", "7", "8","9","10"]
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, myMsg );
+          chart.draw(data, options);
+        }, 400);
+      }
+
+
+ // Create a client instance
+  //client = new Paho.MQTT.Client("host", port,"client_id");
+
+
+  client = new Paho.MQTT.Client("YOUR-CLOUD-MQTT-SERVER", "YOUR-CLOUDMQTT-WEBSOCKET-PORT", "web_" + parseInt(Math.random() * 100, 10));
+
+  // set callback handlers
+  client.onConnectionLost = onConnectionLost;
+  client.onMessageArrived = onMessageArrived;
+  var options = {
+    useSSL: true,
+    userName: "YOUR-CLOUDMQTT-USERNAME",
+    password: "YOUR-CLOUDMQTT-PASSWORD",
+    onSuccess:onConnect,
+    onFailure:doFail
+  }
+
+  // connect the client
+
+
+
+    client.connect(options);
+
+
+  // called when the client connects
+  function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    document.getElementById("connstatus").innerHTML = "Connected";
+    console.log("onConnect");
+    client.subscribe("YOUR-CLOUDMQTT-USERNAME/feeds/myFirstValue");
+  }
+
+  function doFail(e){
+    console.log(e);
+  }
+
+  // called when the client loses its connection
+  function onConnectionLost(responseObject) {
+    document.getElementById("connstatus").innerHTML = "Not Connected";
+    if (responseObject.errorCode !== 0) {
+      console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+  }
+
+  // called when a message arrives
+  function onMessageArrived(message) {
+    myMsg = message.payloadString;
+
+  }
+
+  function updateChart(){
+    data.setValue(0, 1, 50);
+    chart.draw(data, options);
+  }
+
+</script>
+
 </html>
