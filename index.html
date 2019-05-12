@@ -223,8 +223,11 @@
 		<iframe src="https://calendar.google.com/calendar/embed?src=a.elefsiniotis%40gmail.com&ctz=Europe%2FAthens" style="border: 0" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
 	  </div>
 		<div>
-			<p id="result"></p>
-
+	<?php include
+		echo (new Pavex_embed_google_photos_album()) -> getcode(
+        'https://photos.app.goo.gl/CSV7NDstShTUwUZq5', 0, 480, 1920, 1080
+		);
+	?>
 		</div>	  
     </div>
   </section>
@@ -276,10 +279,7 @@
   <script src="js/creative.min.js"></script>
 
   
-  <script>
-	$("#result").load( "phot.php" );
-
-  </script>
+  
 </body>
 
 </html>
