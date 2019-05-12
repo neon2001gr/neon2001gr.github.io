@@ -26,7 +26,7 @@
   <link href="css/creative.min.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="generate_photos()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -276,7 +276,8 @@
   <script src="js/creative.min.js"></script>
 
   <script>
-  photos_new = 
+  function generate_photos(){
+	photos_new = 
 	'<div class="pa-embed-player" style="width:100%; height:480px; display:none;"'
 	+'data-link="https://photos.app.goo.gl/CSV7NDstShTUwUZq5"\n'
 	+'data-title="Mr. Monstro"\n'
@@ -287,9 +288,9 @@
 	+'<img data-src="https://lh3.googleusercontent.com/VvK__Vx8kpPTP57WZPLblacZbTE0NqWeIGTyHSQ8Rq9pvOpWQG_CQE_tOc6jHPtj02XIBYa0Zo9fWbXXQyNYs9hDGGj34QibKFJky4W9nYBpSb57OwxiQoDyo25vzIXMTN2SNxuzqg=w1920-h1080" src="" alt="" />\n'
     +'</div>\n';
 	console.log(photos_new);
-	console.log("new!4");
+	console.log("new!5");
    $('#photos_loaded').append(photos_new);
-
+  }
   </script>
   
   
