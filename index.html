@@ -26,7 +26,7 @@
   <link href="css/creative.min.css" rel="stylesheet">
 </head>
 
-<body id="page-top" onload="generate_photos()">
+<body id="page-top" >
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -223,7 +223,7 @@
 		<iframe src="https://calendar.google.com/calendar/embed?src=a.elefsiniotis%40gmail.com&ctz=Europe%2FAthens" style="border: 0" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
 	  </div>
 		<div>
-				<button onclick='generate_photos()'> Click me </button>
+                <input id="clickMe" type="button" value="clickme" onclick="generate_photos();" />
 				<p id="photos_loaded">
 				</p>
 			</div>
