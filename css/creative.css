@@ -10594,7 +10594,7 @@ hr.light {
 #mainNav {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
-  background-color: #fff;
+  background-color: #fffff;
   -webkit-transition: none;
   transition: none;
 }
@@ -10625,7 +10625,8 @@ hr.light {
   #mainNav {
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, );
+    color: rgba(255, 255, 255, );
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, );
@@ -10644,8 +10645,8 @@ hr.light {
     padding-right: 0;
   }
   #mainNav.navbar-scrolled {
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
     background-color: #fff;
   }
   #mainNav.navbar-scrolled .navbar-brand {
@@ -10676,10 +10677,10 @@ header.masthead h1 {
   font-size: 2.25rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
   header.masthead {
-    height: 100vh;
-    min-height: 40rem;
+    height: 200px;
+    min-height: 60rem;
     padding-top: 72px;
     padding-bottom: 0;
   }
