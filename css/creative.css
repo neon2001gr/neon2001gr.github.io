@@ -10664,7 +10664,7 @@ hr.light {
 
 header.masthead {
   padding-top: 10rem;
-  padding-bottom: calc(10rem - 72px);
+  padding-bottom: 10rem;
   background:url("../img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
