@@ -10517,10 +10517,10 @@ a.text-dark:hover, a.text-dark:focus {
     size: a3;
   }
   body {
-    max-width: 992px !important;
+    min-width: 992px !important;
   }
   .container {
-    max-width: 992px !important;
+    min-width: 992px !important;
   }
   .navbar {
     display: none;
@@ -10624,8 +10624,8 @@ hr.light {
 @media (min-width: 992px) {
   #mainNav {
     -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: transparent;
+    box-shadow: rgba(255, 255, 255, );;
+    background-color: rgba(255, 255, 255, );
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, );
