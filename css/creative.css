@@ -10592,11 +10592,11 @@ hr.light {
 }
 
 #mainNav {
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, );
   background-color: #fff;
-  -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
+  -webkit-transition: none;
+  transition: none;
 }
 
 #mainNav .navbar-brand {
@@ -10628,13 +10628,13 @@ hr.light {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, );
   }
   #mainNav .navbar-brand:hover {
     color: #fff;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, );
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -10669,6 +10669,7 @@ header.masthead {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  background-size: cover;
 }
 
 header.masthead h1 {
