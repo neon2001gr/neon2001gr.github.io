@@ -4495,13 +4495,14 @@ input[type="button"].btn-block {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: white;
 }
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, );;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
